@@ -1,7 +1,6 @@
-import React, { useEffect, useState } from 'react'
-import { useGetAllPuppiesQuery } from '../features/puppySlice';
-import { useNavigate } from 'react-router-dom';
-
+import React, { useEffect, useState } from "react";
+import { useGetAllPuppiesQuery } from "../components/playersSlice";
+import { useNavigate } from "react-router-dom";
 
 export default function HomePage() {
   const [listOfPuppies, setListOfPuppies] = useState([]);
@@ -9,7 +8,7 @@ export default function HomePage() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (status === 'fulfilled') {
+    if (status === "fulfilled") {
       setListOfPuppies(players);
     }
   }, [status]);
@@ -17,7 +16,7 @@ export default function HomePage() {
   const viewPlayer = (id) => {
     console.log(id);
     navigate(`/puppy/${id}`);
-  }
+  };
 
   return (
     <div className="flex flex-col h-full w-full">
@@ -41,7 +40,8 @@ export default function HomePage() {
           <ul className=" mx-20 py-2 h-100 grid grid-cols-3 gap-4">
             {isLoading && <li>Loading puppies...</li>}
             {listOfPuppies.map((p) => (
-              <li key={p.id}
+              <li
+                key={p.id}
                 className="border-0 rounded-t-2xl hover:border-0 hover:shadow-xl hover:shadow-lime-400 hover:border-lime-300 hover:drop-shadow-2xl hover:drop-shadow-sky-200"
               >
                 <p
@@ -59,7 +59,7 @@ export default function HomePage() {
                 <button
                   type="button"
                   name={p.id}
-                  onClick={()=>viewPlayer(p.id)}
+                  onClick={() => viewPlayer(p.id)}
                   className="px-20 py-4 w-full rounded-b-2xl bg-gray-300 text-shadow-sm drop-shadow-lg drop-shadow-gray-400 hover:bg-gray-900 hover:text-gray-400 hover:drop-shadow-lime-400"
                 >
                   See details

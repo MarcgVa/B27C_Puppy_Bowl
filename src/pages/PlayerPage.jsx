@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import { useGetPlayerQuery } from "../features/puppySlice";
+import { useGetPlayerQuery } from "../components/playersSlice";
 export default function PuppyPage() {
   const { id } = useParams();
   const { data } = useGetPlayerQuery(id);

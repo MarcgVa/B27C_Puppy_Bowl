@@ -1,4 +1,4 @@
-import { api } from "../api/puppyBowlApi";
+import { api } from "../api/api";
 
 const puppyApi = api.injectEndpoints({
   endpoints: (builder) => ({

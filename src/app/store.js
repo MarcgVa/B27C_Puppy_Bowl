@@ -1,5 +1,5 @@
 import { configureStore } from "@reduxjs/toolkit";
-import { api } from "../api/puppyBowlApi";
+import { api } from "../api/api";
 
 export const store = configureStore({
   reducer: {

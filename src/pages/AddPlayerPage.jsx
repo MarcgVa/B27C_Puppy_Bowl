@@ -1,8 +1,6 @@
-import { useAddPuppyMutation } from "../features/puppySlice";
+import { useAddPuppyMutation } from "../components/playersSlice";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-
-
 
 export default function AddPuppyPage() {
   const navigate = useNavigate();
@@ -19,7 +17,7 @@ export default function AddPuppyPage() {
     e.preventDefault();
     console.log(formData);
     try {
-      const response = await addPuppy(formData).unwrap()
+      const response = await addPuppy(formData).unwrap();
       if (response) {
         navigate("/");
       }
